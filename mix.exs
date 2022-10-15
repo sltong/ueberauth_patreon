@@ -1,13 +1,22 @@
 defmodule UeberauthPatreon.MixProject do
   use Mix.Project
 
+  @source_url "https://github.com/sltong/ueberauth_patreon"
+  @version "0.1.0"
+
   def project do
     [
       app: :ueberauth_patreon,
-      version: "0.1.0",
+      name: "Ueberauth Patreon",
+      description: description(),
+      version: @version,
       elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      source_url: @source_url,
+      homepage_url: @source_url,
+      deps: deps(),
+      docs: docs(),
+      package: package()
     ]
   end
 
@@ -22,7 +31,25 @@ defmodule UeberauthPatreon.MixProject do
   defp deps do
     [
       {:oauth2, "~> 2.0"},
-      {:ueberauth, "~> 0.7"}
+      {:ueberauth, "~> 0.7"},
+      {:ex_doc, "~> 0.27", only: :dev, runtime: false}
+    ]
+  end
+
+  defp description do
+    "Patreon OAuth2 strategy for Überauth."
+  end
+
+  defp docs do
+    [extras: ["README.md"]]
+  end
+
+  defp package do
+    [
+      files: ["lib", "mix.exs", "README.md", "LICENSE"],
+      maintainers: ["Lao Tong"],
+      licenses: ["BSD-3-Clause"],
+      links: %{"GitHub" => @source_url}
     ]
   end
 end
