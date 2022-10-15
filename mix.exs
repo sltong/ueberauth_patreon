@@ -21,7 +21,8 @@ defmodule UeberauthPatreon.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:oauth2, "~> 2.0"}
+      {:oauth2, "~> 2.0"},
+      {:ueberauth, "~> 0.7"}
     ]
   end
 end
