@@ -41,12 +41,17 @@ defmodule UeberauthPatreon.MixProject do
   end
 
   defp docs do
-    [extras: ["README.md"]]
+    [
+      extras: [
+        "README.md",
+        "CHANGELOG.md"
+      ]
+    ]
   end
 
   defp package do
     [
-      files: ["lib", "mix.exs", "README.md", "LICENSE"],
+      files: ["lib", "mix.exs", "README.md", "LICENSE", "CHANGELOG.md"],
       maintainers: ["Lao Tong"],
       licenses: ["BSD-3-Clause"],
       links: %{"GitHub" => @source_url}
